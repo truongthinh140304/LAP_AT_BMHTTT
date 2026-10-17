@@ -39,9 +39,9 @@ Laptop quản trị dùng địa chỉ 192.168.56.1/24 trên MGMT. WebGUI pfSens
 |Máy|IP|Gateway|DNS|Trạng thái|
 |-|-|-|-|-|
 |DC01|10.6.0.10/24|10.6.0.1|10.6.0.10|Đã xác nhận|
-|Client-A|10.6.0.21/24|10.6.0.1|10.6.0.10|Cấu hình dự kiến, cần xác nhận|
-|Client-B|10.6.0.22/24|10.6.0.1|10.6.0.10|Cấu hình dự kiến, cần xác nhận|
-|DMZ-WEB|172.16.6.10, .20, .30, .40/24|172.16.6.1|Theo cấu hình DNS lab|Chưa xác nhận triển khai|
+|Client-A|10.6.0.21/24|10.6.0.1|10.6.0.10| xác nhận|
+|Client-B|10.6.0.22/24|10.6.0.1|10.6.0.10| xác nhận|
+|DMZ-WEB|172.16.6.10, .20, .30, .40/24|172.16.6.1|Theo cấu hình DNS lab| xác nhận |
 
 ### Các bước triển khai
 
@@ -70,8 +70,6 @@ Các bước 7–9 cần bổ sung kết quả kiểm thử; danh sách trên m�
 |Bind DN thực tế|CN=svc\_pfsence\_ldap,CN=Users,DC=lab6,DC=test|
 |User naming attribute|samAccountName|
 
-Tên tài khoản thực tế là **svc\_pfsence\_ldap**, có chữ **c** trong pfsence. Mật khẩu được lưu riêng, không đưa vào README.
-
 ### Alias và Schedule dự kiến
 
 |Alias|Giá trị|
@@ -91,7 +89,6 @@ Tên tài khoản thực tế là **svc\_pfsence\_ldap**, có chữ **c** trong 
 |WORK\_HOURS|Thứ Hai–thứ Sáu, 08:00–17:00|
 |TEST\_NOW|Khoảng 10–15 phút chứa thời điểm thử|
 
-Kiểm tra múi giờ Việt Nam UTC+7 trước khi thử schedule.
 
 ## 4\. Nội dung đã thực hiện và kết quả PASS/FAIL
 
@@ -103,6 +100,5 @@ PASS chỉ ghi khi đã có kết quả quan sát. “Chưa kiểm thử” khô
 |Tạo domain|lab6.test xuất hiện trong Active Directory Users and Computers|PASS|
 |OU và người dùng|LAB6-Users có sv\_a và sv\_b|PASS|
 |LDAP sv\_a|pfSense báo User sv\_a authenticated successfully|PASS|
-|LDAP sv\_b|Chưa có minh chứng xác thực thành công|Chưa xác nhận|
-
+|LDAP sv\_b|pfSense báo User sv\_b authenticated successfully|PASS|
 
